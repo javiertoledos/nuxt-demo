@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        bitfoliex-admin-web-app
-      </h1>
+      <h1 class="title" v-t="'test.hello-world'" />
       <h2 class="subtitle">
         Bitfoliex managers spa
       </h2>

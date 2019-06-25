@@ -37,6 +37,27 @@ const config: NuxtConfiguration = {
     'nuxt-i18n'
   ],
   /*
+  ** i18n configuration
+  */
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.json'
+      },
+      {
+        code: 'es',
+        file: 'es.json'
+      }
+    ],
+    defaultLocale: 'es',
+    langDir: 'lang/',
+    lazy: true,
+    vueI18n: {
+      fallbackLocale: 'es',
+    }
+  },
+  /*
   ** Build configuration
   */
   build: {
