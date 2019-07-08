@@ -26,8 +26,9 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/vue-app"
+      "@nuxt/vue-app",
+      "@types/jest"
     ],
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   }
 }

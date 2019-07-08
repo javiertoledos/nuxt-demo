@@ -50,11 +50,12 @@ const config: NuxtConfiguration = {
         file: 'es.json'
       }
     ],
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     langDir: 'lang/',
     lazy: true,
+    parsePages: false,
     vueI18n: {
-      fallbackLocale: 'es',
+      fallbackLocale: 'en',
     }
   },
   /*

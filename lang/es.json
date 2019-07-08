@@ -1,4 +1,7 @@
 {
+   "login": {
+      "title-login": "Iniciar sesión"
+   },
    "test": {
       "hello-world": "hola mundo" 
    }
