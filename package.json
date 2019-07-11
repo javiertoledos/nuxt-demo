@@ -18,6 +18,7 @@
     "bulma": "^0.7.5",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^5.12.7",
+    "nuxt-property-decorator": "^2.3.0",
     "ts-node": "^8.3.0",
     "uuid": "^3.3.2",
     "vue-property-decorator": "^8.2.1",
@@ -41,7 +42,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "jest": "^24.1.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0",
     "ts-jest": "^24.0.2",
     "vue-jest": "^3.0.3"
   }

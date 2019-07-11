@@ -23,16 +23,20 @@
 </template>
 
 <script>
+import { Vue, Component } from 'vue-property-decorator';
 import Logo from '~/components/Logo.vue'
 
-export default {
+@Component({
   components: {
-    Logo,
-  },
+    Logo
+  }  
+})
+export default class Index extends Vue {
+
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;

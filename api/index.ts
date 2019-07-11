@@ -34,7 +34,7 @@ export namespace Exmin {
         }
     
         async login(username: string, password: string, totp?: string): Promise<LoginResponse> {
-            const response:AxiosResponse = await this._axios.post('/login', {
+            const response: AxiosResponse = await this._axios.post('/login', {
                 username,
                 password,
                 totp,
