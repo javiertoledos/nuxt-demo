@@ -29,12 +29,14 @@ const config: NuxtConfiguration = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/axiosInstance.ts' }
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/axios'
   ],
   /*
   ** i18n configuration
@@ -75,6 +77,10 @@ const config: NuxtConfiguration = {
     // extend(config, ctx) {
     // },
   },
+
+  axios: {
+    baseURL: 'https://api.bitfoliex.com/'
+  }
 }
 
 export default config
