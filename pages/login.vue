@@ -1,41 +1,37 @@
 <template>
     <div>
         <h2 v-t="'login.title-login'" />
-        <!-- <span class="count">{{ sum }}</span> -->
         <span class="count">{{ counter }}</span>
-        <!-- <span class="square">(square: {{ square }})</span>
-        <button @click="increment">Increment</button> -->
+        <span class="square">(square: {{ square }})</span>
+        <button @click="incr">Increment</button>
     </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, State, namespace } from 'nuxt-property-decorator';
-// import * as counter from '@/store/counter';
-// import { counterStore } from '@/store';
-const counterModule = namespace('@/store');
+import { Vue, Component, State } from 'nuxt-property-decorator';
+import { counterStore } from '@/store';
 
 @Component({})
 export default class LoginPage extends Vue {
-    // @State counter;
-    // @State sum;
-    @counterModule.State counter;
+    // bind to a variable on the state
+    get counter() {
+        return counterStore.counter
+    }
 
-    // private count: number = counterStore.counter;
-    
-    // private square: number = counterStore.square;
+    // bind to a getter
+    get square() {
+        return counterStore.square;
+    }
 
-    // private increment = counterStore.incr;
+    // commit an mutation (best practice: to use an action)
+    increment() {
+        counterStore.increment();
+    }
 
-    // mounted() {
-    //     // console.log(counterStore.square);
-    // }
+    // dispath an action
+    incr() {
+        counterStore.incr();
+    }
 
-    // get square() {
-    //     return counterStore.square
-    // }
-
-    // increment() {
-    //     return counterStore.incr;
-    // }
 }
 </script>

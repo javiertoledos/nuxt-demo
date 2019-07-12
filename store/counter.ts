@@ -3,7 +3,7 @@ import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators';
 
 @Module({
     stateFactory: true,
-    // namespace: true,
+    namespaced: true,
     name: 'counter'
 })
 export default class Counter extends VuexModule {
@@ -15,7 +15,7 @@ export default class Counter extends VuexModule {
     }
 
     @Mutation
-    increment(state): number {
+    increment(): number {
         return this.counter++;
     }
 
