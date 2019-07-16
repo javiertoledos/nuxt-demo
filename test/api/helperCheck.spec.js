@@ -4,7 +4,7 @@ import { Axios, HelperCheck } from '@/api'
 describe('HelperCheck Methods', function () {
   beforeAll(() => {
     const axiosInstance = axios.create({
-      baseURL: 'http://managers-api.portafoliex.com/'
+      baseURL: 'https://admin-api.vlcntest.com/'
     });
 
     Axios.setInstance(axiosInstance);
