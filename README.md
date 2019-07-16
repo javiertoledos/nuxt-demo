@@ -32,3 +32,34 @@ To add a new module to the Store:
 ```
 import { moduleName } from '@/store';
 ```
+
+## API Config
+---
+To add a new route to the api (@/api/admin):
+
+1. Create a folder for the module, if doesnt exist. You can guide with the postman definition.
+2. Create the file with the name of the method. (eg. serverUp, login, etc...);
+3. Create a index.ts if isn't created, and add an export method:
+```
+import { login } from './login';
+
+export {
+    login
+};
+```
+4. In the index.ts that is located in the root of @/api, import and export the module:
+```
+import * as HelperCheck from './admin/helpercheck';
+import * as Auth from './admin/auth';
+
+export {
+    HelperCheck,
+    Auth
+}
+```
+5. Now it can be accesed via
+```
+import { Auth } from '@/api';
+...
+Auth.login(params);
+```
