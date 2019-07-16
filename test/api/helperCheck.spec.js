@@ -11,7 +11,7 @@ describe('HelperCheck Methods', function () {
   });
 
   test('returns the healthcheck', async () => {
-    const { data } = await HelperCheck.serverUp();
-    expect(data).toHaveProperty('time');
+    const status = await HelperCheck.serverUp();
+    expect(status).toHaveProperty('time');
   });
 })

@@ -1,13 +1,7 @@
 import Vuex from 'vuex';
 import { Module, VuexModule, Mutation, Action, MutationAction } from 'vuex-module-decorators';
 import { HelperCheck } from '@/api';
-
-interface baseRequest {
-    success: string,
-    result: {
-        timestamp: number
-    }
-}
+import StatusCheck = Models.StatusCheck;
 
 @Module({
     stateFactory: true,
@@ -16,7 +10,7 @@ interface baseRequest {
 })
 export default class Counter extends VuexModule {
     counter: number = 3;
-    status: baseRequest = { success: "true", result: { timestamp: 5263 } };
+    status: StatusCheck = { time: '' };
 
     /**
      * Getters
@@ -51,9 +45,9 @@ export default class Counter extends VuexModule {
 
     @MutationAction
     async fetchStatus() {
-        const { data } = await HelperCheck.serverUp();
+        const status = await HelperCheck.serverUp();
         return {
-            status: data
+            status
         };
     }
 }

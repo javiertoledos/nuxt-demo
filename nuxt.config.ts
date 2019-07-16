@@ -79,7 +79,7 @@ const config: NuxtConfiguration = {
   },
 
   axios: {
-    baseURL: 'https://api.bitfoliex.com/'
+    baseURL: 'http://managers-api.portafoliex.com/'
   }
 }
 
