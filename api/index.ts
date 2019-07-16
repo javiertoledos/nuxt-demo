@@ -1,5 +1,6 @@
 import { AxiosInstance, AxiosResponse } from 'axios'
 import * as HelperCheck from './admin/helpercheck';
+import * as Auth from './admin/auth';
 
 export type AdminResponse = {
     success: boolean,
@@ -35,6 +36,7 @@ export class Axios {
 }
 
 export {
-    HelperCheck
+    HelperCheck,
+    Auth
 }
 
