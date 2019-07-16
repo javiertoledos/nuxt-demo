@@ -1,5 +1,6 @@
-import axios from 'axios';
+import { Axios } from '@/api';
 
-export function request() {
-    return axios.get('/');
+// Functional programming?
+export async function serverUp() {
+    return await Axios.getInstance().get('/');
 }

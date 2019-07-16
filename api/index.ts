@@ -1,4 +1,5 @@
 import { AxiosInstance, AxiosResponse } from 'axios'
+import * as HelperCheck from './admin/helpercheck';
 
 // export namespace Exmin {
 //     export type AdminResponse = { 
@@ -61,24 +62,25 @@ export type LoginResponse = {
     }
 }
 
-export default class API {
-    private static _axios: AxiosInstance;
-
-    private _token: string | undefined;
-
-    constructor(axios: AxiosInstance) {
-        API._axios = axios;
+export class Axios {
+    private static instance: Axios;
+    private _axios: AxiosInstance;
+    
+    private constructor(axios: AxiosInstance) {
+        this._axios = axios;
     }
 
-    get token(): string {
-        return this._token!
-    }
-    set token(token: string) {
-        this._token = token;
+    static getInstance(): AxiosInstance {
+        return Axios.instance._axios;
     }
 
-    public static login(): Promise<AxiosResponse> {
-        return this._axios.get('/');
+    static setInstance(axios: AxiosInstance): Axios {
+        Axios.instance = new Axios(axios);      
+        return Axios.instance;
     }
+}
+
+export {
+    HelperCheck
 }
 

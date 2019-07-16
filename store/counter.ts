@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import { Module, VuexModule, Mutation, Action, MutationAction } from 'vuex-module-decorators';
-import API from '@/api';
+import { HelperCheck } from '@/api';
 
 interface baseRequest {
     success: string,
@@ -51,7 +51,7 @@ export default class Counter extends VuexModule {
 
     @MutationAction
     async fetchStatus() {
-        const { data } = await API.login();
+        const { data } = await HelperCheck.serverUp();
         return {
             status: data
         };

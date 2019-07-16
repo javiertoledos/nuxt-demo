@@ -1,9 +1,9 @@
-import API from '@/api';
+import { Axios } from '@/api';
 
-export default function(context) {
+export default function (context: any) {
     if (!context.$axios) {
         console.error('Configure Nuxt Axios plugin');
     } else {
-        new API(context.$axios);
+        Axios.setInstance(context.$axios);
     }
 }

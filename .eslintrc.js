@@ -14,6 +14,7 @@ module.exports = {
         "imports": "always-multiline",
         "exports": "always-multiline",
         "functions": "never",
-    }]
+    }],
+    "semi": "always"
   }
 }
