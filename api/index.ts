@@ -2,21 +2,6 @@ import { AxiosInstance, AxiosResponse } from 'axios'
 import * as HelperCheck from './admin/helpercheck';
 import * as Auth from './admin/auth';
 
-export type AdminResponse = {
-    success: boolean,
-    result: any,
-}
-
-export type LoginResponse = {
-    success: boolean,
-    result: {
-        token?: boolean,
-        tfa_secret?: boolean,
-        reset_password?: boolean,
-        ask_tfa?: boolean,
-    }
-}
-
 export class Axios {
     private static instance: Axios;
     private _axios: AxiosInstance;

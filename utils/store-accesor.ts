@@ -14,9 +14,9 @@ import counter from '~/store/counter';
  * 
  * import { moduleName } from '@/store';
  * 
- * Add the new modules in the initialiseStores, like the example
+ * Add the new modules in the initializeModules, like the example
  * 
- * function initialiseStores(store: Store<any>): void {
+ * function initializeModules(store: Store<any>): void {
  *  counterStore = getModule(counter, store)a
  * }
  * 
@@ -24,11 +24,11 @@ import counter from '~/store/counter';
 
 let counterStore: counter;
 
-function initialiseStores(store: Store<any>): void {
+function initializeModules(store: Store<any>): void {
     counterStore = getModule(counter, store)
 }
 
 export {
-  initialiseStores,
+  initializeModules,
   counterStore,
 }

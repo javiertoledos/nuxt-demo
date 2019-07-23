@@ -9,8 +9,15 @@ declare namespace Models {
     export interface LoginResponse {
         success: boolean,
         result: {
-            code: number,
-            message: string
+            token?: boolean,
+            tfa_secret?: boolean,
+            reset_password?: boolean,
+            ask_tfa?: boolean,
         }
     }
+
+    export interface AdminResponse = {
+        success: boolean,
+        result: any,
+    }    
 }

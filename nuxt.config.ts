@@ -29,7 +29,7 @@ const config: NuxtConfiguration = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/axiosInstance.ts' }
+    { src: '~/plugins/initApi.ts' }
   ],
   /*
   ** Nuxt.js modules
