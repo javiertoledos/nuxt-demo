@@ -2,16 +2,34 @@
   div
     nav.navbar(role="navigation" aria-label="main-navigation")
       .navbar-menu
+        .navbar-start
+          nuxt-link.navbar-item(
+            :to="localePath('index')"
+          ) {{ $t('nav.home') }}
+          nuxt-link.navbar-item(
+            :to="localePath('private')"
+          ) {{ $t('nav.private') }}
         .navbar-end
-            nuxt-link.navbar-item(
-              v-for="locale in availableLocales"
-              :key="locale.code"
-              :to="switchLocalePath(locale.code)"
-              :class="{ 'is-active': locale.code === currentLocale }"
-            )  {{ locale.code  }}
+          a.navbar-item(
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :href="switchLocalePath(locale.code)"
+            :class="{ 'is-active': locale.code === currentLocale }"
+          )  {{ locale.code  }}
+
+          .navbar-item
+            nuxt-link(
+              v-if="!isLoggedIn"
+              :to="localePath('login')"
+            ) {{ $t('nav.login') }}
+            a(
+              href="#"
+              v-else
+              @click.prevent="logout"
+            ) {{ $t('nav.logout') }}
     .section
       .container
-        nuxt
+        nuxt(:key="$route.fullPath")
 </template>
 <script type="ts">
 import { Vue, Component, State } from 'nuxt-property-decorator';
@@ -23,6 +41,14 @@ export default class LoginPage extends Vue {
   }
   get currentLocale() {
     return this.$i18n.locale
+  }
+
+  get isLoggedIn() {
+    return this.$store.state.auth.loggedIn
+  }
+
+  async logout() {
+    await this.$auth.logout()
   }
 }
 </script>

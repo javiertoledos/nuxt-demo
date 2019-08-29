@@ -1,13 +1,15 @@
 <template lang="pug">
   div
-    .h1.title {{ $t('home.hello-world-title')}}
+    .h1.title {{ $t('private.secure-page-title')}}
 </template>
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
 import Logo from '~/components/Logo.vue'
 
-@Component
+@Component({
+  middleware: ["auth"],
+})
 export default class Index extends Vue {
 
 }

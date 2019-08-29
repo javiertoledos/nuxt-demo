@@ -7,7 +7,16 @@
       "password-placeholder": "Enter your password",
       "log-in-button": "Log in"
    },
+   "nav": {
+      "home":  "Home",
+      "private": "Private",
+      "login": "Login",
+      "logout": "Logout"
+   },
    "home": {
       "hello-world-title": "Hello world!" 
+   },
+   "private": {
+      "secure-page-title": "Secure page"
    }
 }

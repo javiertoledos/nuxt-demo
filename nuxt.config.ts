@@ -92,6 +92,10 @@ const config: NuxtConfiguration = {
       index: {
         en: '/',
         es: '/'
+      },
+      private: {
+        en: '/private',
+        es: '/privado'
       }
     },
     vueI18n: {
