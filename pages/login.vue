@@ -33,7 +33,10 @@
 import { Vue, Component, State } from 'nuxt-property-decorator';
 import { counterStore } from '@/store';
 
-@Component({})
+
+@Component({
+    middleware: ['auth']
+})
 export default class LoginPage extends Vue {
     username : string = '';
     password : string = '';
@@ -51,7 +54,13 @@ export default class LoginPage extends Vue {
         return counterStore.square;
     }
     login() {
-        alert("hola");
+        //@ts-ignore 
+        this.$auth.loginWith('local', {
+            data: {
+                username: 'your_username',
+                password: 'your_password'
+            }
+        })
     }
 
     // commit an mutation (best practice: to use an action)

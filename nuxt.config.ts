@@ -16,6 +16,26 @@ const config: NuxtConfiguration = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/login', method: 'post', propertyName: 'data.token' },
+          user: { url: '/profile', method: 'get', propertyName: 'data' }
+        }
+      }
+    },
+    redirect: {
+      login: 'login',
+      logout: 'index',
+      callback: 'login',
+      home: 'index'
+    },
+    plugins: [
+      { src: '~/plugins/authLangRedirect.ts' }
+    ]
+  },
+  middleware: ['auth'],
   /*
   ** Customize the progress-bar color
   */
@@ -30,7 +50,7 @@ const config: NuxtConfiguration = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/initApi.ts' }
+    { src: '~/plugins/initApi.ts' },
   ],
   /*
   ** Nuxt.js modules
@@ -64,6 +84,16 @@ const config: NuxtConfiguration = {
     langDir: 'lang/',
     lazy: true,
     parsePages: false,
+    pages: {
+      login: {
+        en: '/login',
+        es: '/ingresar'
+      },
+      index: {
+        en: '/',
+        es: '/'
+      }
+    },
     vueI18n: {
       fallbackLocale: 'en',
     }
