@@ -7,7 +7,7 @@
       "password-placeholder": "Enter your password",
       "log-in-button": "Log in"
    },
-   "test": {
-      "hello-world": "hello world" 
+   "home": {
+      "hello-world-title": "Hello world!" 
    }
 }
