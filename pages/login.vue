@@ -1,16 +1,32 @@
 <template lang="pug">
     div.columns
         .column.is-one-third.is-offset-one-third
-            h1.title Login
+            h1.title {{ $t('login.log-in-title') }}
             form(@submit="login")
                 .field
-                    label.label(for="login_username") Username
+                    label.label(for="login_username") {{ $t('login.username-label') }}
                     .control
-                        input#login_username.input(type="text" placeholder="Enter your Username" v-model="username")
+                        input#login_username.input(
+                            type="text" 
+                            :placeholder="$t('login.username-placeholder')" 
+                            v-model="username"
+                            required
+                        )
                 .field
-                    label.label(for="login_password") Password
+                    label.label(for="login_password") {{ $t('login.password-label') }}
                     .control
-                        input#login_password.input(type="password" placeholder="Enter your password" v-model="password")
+                        input#login_password.input(
+                            type="password" 
+                            :placeholder="$t('login.password-placeholder')" 
+                            v-model="password"
+                            required
+                        )
+                .field
+                    .control
+                        input.button.is-primary(
+                            type="submit" 
+                            :value="$t('login.log-in-button')"
+                        )
 </template>
 
 <script lang="ts">

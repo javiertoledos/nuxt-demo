@@ -1,8 +1,13 @@
 {
    "login": {
-      "title-login": "Iniciar sesión"
+      "log-in-title": "Iniciar Sesión",
+      "username-label": "Usuario",
+      "password-label": "Contraseña",
+      "username-placeholder": "Ingresa tu usuario",
+      "password-placeholder": "Ingresa tu contraseña",
+      "log-in-button": "Ingresar"
    },
    "test": {
-      "hello-world": "hola mundo" 
+      "hello-world": "hello world" 
    }
 }

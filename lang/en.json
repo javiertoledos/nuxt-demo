@@ -1,6 +1,11 @@
 {
    "login": {
-      "title-login": "Login"
+      "log-in-title": "Log in",
+      "username-label": "Username",
+      "password-label": "Password",
+      "username-placeholder": "Enter your username",
+      "password-placeholder": "Enter your password",
+      "log-in-button": "Log in"
    },
    "test": {
       "hello-world": "hello world" 
