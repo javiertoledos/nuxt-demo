@@ -1,11 +1,16 @@
-<template>
-    <div>
-        <h2 v-t="'login.title-login'" />
-        <span class="count">{{ counter }}</span>
-        <span class="square">(square: {{ square }})</span>
-        <button @click="fetchStatus">Increment</button>
-        <div>{{ status }}</div>
-    </div>
+<template lang="pug">
+    div.columns
+        .column.is-one-third.is-offset-one-third
+            h1.title Login
+            form(@submit="login")
+                .field
+                    label.label(for="login_username") Username
+                    .control
+                        input#login_username.input(type="text" placeholder="Enter your Username" v-model="username")
+                .field
+                    label.label(for="login_password") Password
+                    .control
+                        input#login_password.input(type="password" placeholder="Enter your password" v-model="password")
 </template>
 
 <script lang="ts">
@@ -14,6 +19,8 @@ import { counterStore } from '@/store';
 
 @Component({})
 export default class LoginPage extends Vue {
+    username : string = '';
+    password : string = '';
     // bind to a variable on the state
     get counter() {
         return counterStore.counter
@@ -26,6 +33,9 @@ export default class LoginPage extends Vue {
     // bind to a getter
     get square() {
         return counterStore.square;
+    }
+    login() {
+        alert("hola");
     }
 
     // commit an mutation (best practice: to use an action)
