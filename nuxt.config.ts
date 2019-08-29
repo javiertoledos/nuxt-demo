@@ -24,6 +24,7 @@ const config: NuxtConfiguration = {
   ** Global CSS
   */
   css: [
+
   ],
   /*
   ** Plugins to load before mounting the App
@@ -36,8 +37,14 @@ const config: NuxtConfiguration = {
   */
   modules: [
     'nuxt-i18n',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+        '@assets/scss/base.scss'
+    ]
+  },
   /*
   ** i18n configuration
   */

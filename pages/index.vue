@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <logo class="logo" />
       <h1 class="title" v-t="'test.hello-world'" />
       <h2 class="subtitle">
         Nuxt demo managers spa
@@ -37,6 +37,11 @@ export default class Index extends Vue {
 </script>
 
 <style lang="scss">
+@include mobile {
+  .logo {
+    display: none;
+  }
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
