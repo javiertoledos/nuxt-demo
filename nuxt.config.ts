@@ -38,7 +38,8 @@ const config: NuxtConfiguration = {
   modules: [
     'nuxt-i18n',
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/auth'
   ],
   styleResources: {
     scss: [
