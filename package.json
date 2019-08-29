@@ -1,7 +1,7 @@
 {
-  "name": "bitfoliex-admin-web-app",
+  "name": "nuxt-demo-web-app",
   "version": "1.0.0",
-  "description": "Bitfoliex managers spa",
+  "description": "Nuxt demo managers spa",
   "author": "Javier Toledo",
   "private": true,
   "scripts": {

@@ -1,6 +1,6 @@
-# bitfoliex-admin-web-app
+# nuxt-demo-web-app
 
-> Bitfoliex managers spa
+> Nuxt demo spa
 
 ## Build Setup
 

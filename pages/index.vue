@@ -4,7 +4,7 @@
       <logo />
       <h1 class="title" v-t="'test.hello-world'" />
       <h2 class="subtitle">
-        Bitfoliex managers spa
+        Nuxt demo managers spa
       </h2>
       <div class="links">
         <a
