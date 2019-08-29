@@ -2,7 +2,7 @@
     div.columns
         .column.is-one-third.is-offset-one-third
             h1.title {{ $t('login.log-in-title') }}
-            form(@submit="login")
+            form(@submit.prevent="login")
                 .field
                     label.label(for="login_username") {{ $t('login.username-label') }}
                     .control
